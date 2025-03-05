@@ -5,9 +5,9 @@ import (
 	"fmt"
 )
 
-func commandExplore(cfg *config, args []string) error {
-	if len(args) == 0 {
-		return errors.New("Explore: arguments are empty")
+func commandExplore(cfg *config, args ...string) error {
+	if len(args) != 1 {
+		return errors.New("you must provide a location name")
 	}
 
 	exploredArea := args[0]

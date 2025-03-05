@@ -5,11 +5,11 @@ import (
 	"fmt"
 )
 
-func commandMapf(cfg *config, args []string) error {
+func commandMapf(cfg *config, args ...string) error {
 	return ExecuteAndListLocations(cfg, cfg.nextLocationsURL)
 }
 
-func commandMapb(cfg *config, args []string) error {
+func commandMapb(cfg *config, args ...string) error {
 	if cfg.prevLocationsURL == nil {
 		return errors.New("you're on the first page")
 	}
